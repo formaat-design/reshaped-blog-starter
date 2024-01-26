@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { View } from "reshaped";
+import App from "@/components/App";
+import Menu from "@/components/Menu";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,12 +10,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" data-rs-theme="reshaped" data-rs-color-mode="dark">
+      <body>
+        <App>
+          <View direction="row" divided height="100dvh" align="stretch">
+            <Menu />
+            <View.Item>{children}</View.Item>
+          </View>
+        </App>
+      </body>
     </html>
   );
 }
