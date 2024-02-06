@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { View } from "reshaped";
 import App from "@/components/App";
 import Menu from "@/components/Menu";
+import Submenu from "@/components/Submenu";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,15 @@ export default function RootLayout({
       <body>
         <App>
           <View direction="row" divided height="100dvh" align="stretch">
-            <Menu />
+            <View
+              backgroundColor="elevation-base"
+              divided
+              direction="row"
+              align="stretch"
+            >
+              <Menu />
+              <Submenu />
+            </View>
             <View.Item>{children}</View.Item>
           </View>
         </App>
