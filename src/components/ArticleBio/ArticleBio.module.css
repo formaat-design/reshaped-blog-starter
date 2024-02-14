@@ -1,0 +1,34 @@
+.root {
+  position: relative;
+  padding: var(--rs-unit-x8) 0 var(--rs-unit-x4);
+}
+
+.title {
+  position: absolute;
+  top: 0;
+}
+
+.date {
+  font-variant-numeric: tabular-nums;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
+}
+
+@media (--rs-viewport-l) {
+  .root {
+    padding: var(--rs-unit-x4) 0;
+  }
+
+  .title {
+    top: auto;
+    transform: translateX(-100%);
+    padding-inline-end: var(--rs-unit-x4);
+  }
+}

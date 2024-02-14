@@ -1,0 +1,10 @@
+.root {
+  padding: var(--rs-unit-x4) !important;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.root pre {
+  margin: 0 !important;
+  background: transparent !important;
+}

@@ -1,0 +1,11 @@
+.title {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: var(--rs-duration-fast) var(--rs-easing-standard);
+  transition-property: opacity, transform;
+}
+
+.title--active {
+  opacity: 1;
+  transform: translateY(0);
+}

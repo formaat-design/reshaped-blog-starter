@@ -1,0 +1,22 @@
+.li {
+  position: relative;
+}
+
+.ul > .li {
+  padding-inline-start: var(--rs-unit-x6);
+}
+
+.ul > .li::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--rs-line-height-body-2) / 2);
+  height: 1px;
+  width: var(--rs-unit-x3);
+  inset-inline-start: 0;
+  background: var(--rs-color-border-neutral);
+}
+
+.ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
