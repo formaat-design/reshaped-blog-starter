@@ -6,8 +6,7 @@ const config: Config = {
     name: "Reshaped",
   },
   meta: {
-    // Add full url
-    url: "/",
+    url: "https://vercel.com/reshaped/reshaped-blog-starter",
     title: "Reshaped",
     description:
       "Blog starter built on top of Next.js and Reshaped. Inspired by Brian Lovin blog.",

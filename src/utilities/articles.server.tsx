@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import type { AvailableSubmenuItems } from "@/components/LayoutSubmenu/LayoutSubmenu.types";
+import type { SubmenuItemsMap } from "@/types";
 
 const getArticleData = (filePath: string) => {
   if (!fs.existsSync(filePath)) return;
@@ -19,7 +19,7 @@ export const getArticlesList = () => {
   const projectRoot = process.cwd();
   const appSrcRoot = path.resolve(projectRoot, "src", "app");
   const dirs = fs.readdirSync(appSrcRoot);
-  const availableSubmenuPages: AvailableSubmenuItems = {};
+  const availableSubmenuPages: SubmenuItemsMap = {};
 
   const rootPagePath = path.join(appSrcRoot, "page.mdx");
   const rootArticle = getArticleData(rootPagePath);
@@ -45,13 +45,13 @@ export const getArticlesList = () => {
     // Ignore Next parallel routes
     if (dir.startsWith("@")) return;
 
-    availableSubmenuPages[dir] = [];
-
     const menuPagePath = path.join(dirPath, "page.mdx");
     const menuArticle = getArticleData(menuPagePath);
 
+    availableSubmenuPages[dir] = [];
+
     if (menuArticle) {
-      availableSubmenuPages[dir].push({
+      availableSubmenuPages[dir]?.push({
         href: `/${dir}`,
         ...menuArticle,
       });
@@ -63,7 +63,7 @@ export const getArticlesList = () => {
       const article = getArticleData(pagePath);
       if (!article) return;
 
-      availableSubmenuPages[dir].push({
+      availableSubmenuPages[dir]?.push({
         href: `/${dir}/${pageDir}`,
         ...article,
       });
