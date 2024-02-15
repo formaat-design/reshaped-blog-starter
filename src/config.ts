@@ -15,7 +15,7 @@ import {
 const config: Config = {
   app: {
     title: "Reshaped",
-    subtitle: "Blog starter",
+    subtitle: "Blog starter kit",
     thumbnailUrl: "/img/logo.svg",
   },
   meta: {
