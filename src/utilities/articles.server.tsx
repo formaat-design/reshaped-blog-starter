@@ -35,6 +35,9 @@ export const getArticlesList = () => {
 
   dirs.forEach((dir) => {
     const dirPath = path.join(appSrcRoot, dir);
+
+    if (!fs.existsSync(dirPath)) return;
+
     const isDir = fs.lstatSync(dirPath).isDirectory();
 
     if (!isDir) return;
