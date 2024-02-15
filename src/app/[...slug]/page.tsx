@@ -1,8 +1,16 @@
+// import { View, Text } from "reshaped";
+
 /**
- * Empty placeholder route for pages that only render the submenu
+ * Placeholder in case this url is not overridden by the markdown pages
  */
 const CatchRoute = () => {
-  return null;
+  // return (
+  //   <View height="100dvh" align="center" justify="center">
+  //     <Text variant="featured-1" weight="medium">
+  //       Page not found 😔
+  //     </Text>
+  //   </View>
+  // );
 };
 
 export default CatchRoute;

@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  Avatar,
   View,
   Text,
   MenuItem,
@@ -72,10 +73,21 @@ const LayoutMenu = () => {
         grow
         overflow="auto"
       >
-        <View paddingBottom={5}>
-          <Text variant="body-3" weight="bold">
-            Reshaped
-          </Text>
+        <View paddingBottom={5} direction="row" gap={2} align="center">
+          {config.app.thumbnailUrl && (
+            <Avatar size={9} src={config.app.thumbnailUrl} />
+          )}
+
+          <View.Item grow>
+            <Text variant="body-3" weight="bold">
+              {config.app.title}
+            </Text>
+            {config.app.subtitle && (
+              <Text variant="body-3" color="neutral-faded">
+                {config.app.subtitle}
+              </Text>
+            )}
+          </View.Item>
         </View>
 
         {config.menu.map((item) => {

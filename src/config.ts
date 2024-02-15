@@ -1,9 +1,22 @@
 import type { Config } from "./types";
-import { Home, Book } from "react-feather";
+import {
+  Home,
+  Feather,
+  Twitter,
+  GitHub,
+  Figma,
+  CheckSquare,
+  Mic,
+  Briefcase,
+  Layers,
+  Package,
+} from "react-feather";
 
 const config: Config = {
   app: {
-    name: "Reshaped",
+    title: "Reshaped",
+    subtitle: "Blog starter",
+    thumbnailUrl: "/img/logo.svg",
   },
   meta: {
     url: "https://reshaped-blog-starter.vercel.app",
@@ -20,22 +33,58 @@ const config: Config = {
       href: "/",
     },
     {
-      icon: Book,
+      icon: Feather,
       title: "Writing",
       href: "/article",
     },
     {
-      title: "Me",
+      icon: Layers,
+      title: "Stack",
+      href: "/stack",
+    },
+
+    {
+      title: "Projects",
       items: [
         {
-          icon: Home,
-          title: "Home",
-          href: "/home",
+          icon: Package,
+          title: "Reshaped",
+          href: "https://reshaped.so",
         },
         {
-          icon: Book,
-          title: "Writing",
-          href: "/writing",
+          icon: CheckSquare,
+          title: "Design System Checklist",
+          href: "https://www.designsystemchecklist.com",
+        },
+        {
+          icon: Mic,
+          title: "Design System Interviews",
+          href: "https://reshaped.so/blog",
+        },
+        {
+          icon: Briefcase,
+          title: "Formaat Design",
+          href: "https://formaat.design",
+        },
+      ],
+    },
+    {
+      title: "Online",
+      items: [
+        {
+          icon: Twitter,
+          title: "Twitter",
+          href: "https://twitter.com/blvdmitry",
+        },
+        {
+          icon: GitHub,
+          title: "GitHub",
+          href: "https://github.com/formaat-design",
+        },
+        {
+          icon: Figma,
+          title: "Figma",
+          href: "https://www.figma.com/@reshaped",
         },
       ],
     },

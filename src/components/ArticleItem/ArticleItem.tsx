@@ -18,13 +18,15 @@ const ArticleItem = (props: Props) => {
         <MenuItem roundedCorners selected={href === pathname} color="neutral">
           <View gap={0.5}>
             <Text>{title}</Text>
-            <Text color="neutral-faded" weight="regular">
-              {date.toLocaleString("en-us", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
-            </Text>
+            {date && (
+              <Text color="neutral-faded" weight="regular">
+                {date.toLocaleString("en-us", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </Text>
+            )}
           </View>
         </MenuItem>
       </NextLink>

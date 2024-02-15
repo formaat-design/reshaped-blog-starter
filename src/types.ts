@@ -23,7 +23,9 @@ export type SubmenuItemsMap = Record<string, SubmenuItem[] | undefined>;
 
 export type Config = {
   app: {
-    name: "Reshaped";
+    title: string;
+    subtitle?: string;
+    thumbnailUrl?: string;
   };
   meta: {
     url: string;

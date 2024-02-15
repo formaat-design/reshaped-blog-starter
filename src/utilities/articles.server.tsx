@@ -71,6 +71,10 @@ export const getArticlesList = () => {
         ...article,
       });
     });
+
+    availableSubmenuPages[dir]?.sort(
+      (a, b) => (+b.created || 0) - (+a.created || 0),
+    );
   });
 
   return availableSubmenuPages;
