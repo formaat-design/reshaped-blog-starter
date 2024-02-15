@@ -6,7 +6,7 @@ const config: Config = {
     name: "Reshaped",
   },
   meta: {
-    url: "https://vercel.com/reshaped/reshaped-blog-starter",
+    url: "https://reshaped-blog-starter.vercel.app",
     title: "Reshaped",
     description: "Blog starter built on top of Next.js and Reshaped",
     twitter: {
