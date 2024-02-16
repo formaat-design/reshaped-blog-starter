@@ -27,9 +27,9 @@ yarn dev
 
 ## Working with the content
 
-- To configure the application – use the `config.ts` file, which includes the menu structure and the general settings of the blog.
+- To configure the application – use the `src/config.ts` file, which includes the menu structure and the general settings of the blog.
   You need to manually enter only the top-level menu items, while all submenu items are generated from the markdown file structure.
-- All content routes are markdown pages which dynamically feed into the website navigation. You can edit `page.mdx` on the root level for your homepage, create individual menu entries for mdx pages or create a subfolder like `/article` to create categories.
+- All content resides in the `src/posts` folder and files creates in it control the website routing and displayed submenu items. You can create `.mdx` files on the top level or create a subfolder like `/article` to create categories.
 - Markdown files support `frontmatter` format, where you can pass the article `title` and `created` date properties, they will be displayed in the articles list and on the article route
 - Markdown files support the vanilla markdown features, as well as custom `Bio` component:
 

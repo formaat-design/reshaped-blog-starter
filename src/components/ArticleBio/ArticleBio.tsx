@@ -35,63 +35,69 @@ const ArticleBio = (props: Props) => {
       {children}
       {items && (
         <View gap={2}>
-          {items?.map((item) => (
-            <View
-              gap={{ s: 1, l: 4 }}
-              direction={{ s: "column", l: "row" }}
-              key={item.title}
-            >
-              <View
-                direction="row"
-                justify="space-between"
-                wrap={false}
-                gap={4}
-                align="center"
-                grow
-              >
+          {items?.map((item) => {
+            const dateContent = item.date && (
+              <View align="end">
                 <Text
-                  color="neutral"
+                  color="neutral-faded"
                   variant={{ s: "body-3", m: "body-2" }}
-                  weight="medium"
+                  className={s.date}
                 >
-                  {item.href ? (
-                    <Link color="inherit" variant="plain" href={item.href}>
-                      {item.title}
-                    </Link>
-                  ) : (
-                    item.title
-                  )}
+                  {item.date.padEnd(dateLength, "\u00A0")}
                 </Text>
-
-                {(item.label || item.date) && (
-                  <View.Item grow>
-                    <Divider />
-                  </View.Item>
-                )}
-
-                {item.label && (
-                  <Text
-                    color="neutral-faded"
-                    variant={{ s: "body-3", m: "body-2" }}
-                  >
-                    {item.label}
-                  </Text>
-                )}
               </View>
+            );
 
-              {item.date && (
-                <View align="end">
+            return (
+              <View
+                gap={{ s: 1, l: 4 }}
+                direction={{ s: "column", l: "row" }}
+                key={item.title}
+              >
+                <View
+                  direction="row"
+                  justify="space-between"
+                  wrap={false}
+                  gap={4}
+                  align="center"
+                  grow
+                >
                   <Text
-                    color="neutral-faded"
+                    color="neutral"
                     variant={{ s: "body-3", m: "body-2" }}
-                    className={s.date}
+                    weight="medium"
                   >
-                    {item.date.padEnd(dateLength, "\u00A0")}
+                    {item.href ? (
+                      <Link color="inherit" variant="plain" href={item.href}>
+                        {item.title}
+                      </Link>
+                    ) : (
+                      item.title
+                    )}
                   </Text>
+
+                  {(item.label || item.date) && (
+                    <View.Item grow>
+                      <Divider />
+                    </View.Item>
+                  )}
+
+                  {item.label ? (
+                    <Text
+                      color="neutral-faded"
+                      variant={{ s: "body-3", m: "body-2" }}
+                    >
+                      {item.label}
+                    </Text>
+                  ) : (
+                    dateContent
+                  )}
                 </View>
-              )}
-            </View>
-          ))}
+
+                {item.label && dateContent}
+              </View>
+            );
+          })}
         </View>
       )}
     </Text>

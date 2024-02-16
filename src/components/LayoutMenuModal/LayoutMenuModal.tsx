@@ -15,7 +15,8 @@ const LayoutMenuModal = () => {
       <Modal
         active={menuToggle.active}
         onClose={menuToggle.deactivate}
-        position="bottom"
+        position={{ s: "bottom", m: "start" }}
+        size={{ s: "auto", m: "300px" }}
         padding={0}
       >
         <LayoutMenu />
