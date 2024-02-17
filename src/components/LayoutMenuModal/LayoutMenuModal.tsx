@@ -2,7 +2,7 @@
 
 import { Menu } from "react-feather";
 import { Button, Modal, useToggle } from "reshaped";
-import LayoutMenu from "@/components/LayoutMenu";
+import LayoutMenu from "../../components/LayoutMenu";
 
 const LayoutMenuModal = () => {
   const menuToggle = useToggle();

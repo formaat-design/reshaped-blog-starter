@@ -12,7 +12,7 @@ import {
   Button,
   useToggle,
 } from "reshaped";
-import LayoutMenuModal from "@/components/LayoutMenuModal";
+import LayoutMenuModal from "../../components/LayoutMenuModal";
 import s from "./Article.module.css";
 
 type Props = {

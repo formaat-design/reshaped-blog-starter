@@ -2,8 +2,8 @@
 
 import { ReactNode } from "react";
 import { View, ScrollArea, Hidden } from "reshaped";
-import type { SubmenuItemsMap } from "@/types";
-import useArticleNavigation from "@/hooks/useArticleNavigation";
+import type { SubmenuItemsMap } from "../../types";
+import useArticleNavigation from "../../hooks/useArticleNavigation";
 
 type Props = {
   children: ReactNode;

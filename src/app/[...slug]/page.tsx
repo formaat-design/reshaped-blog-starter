@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { View, Text } from "reshaped";
-import MdxContent from "@/components/MdxContent";
+import MdxContent from "../../components/MdxContent";
 
 export default async function ArticleRoute({
   params,

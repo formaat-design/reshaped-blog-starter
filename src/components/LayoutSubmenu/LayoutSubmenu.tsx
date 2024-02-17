@@ -1,9 +1,9 @@
 "use client";
 
 import { View, Text, ScrollArea, Hidden } from "reshaped";
-import LayoutMenuModal from "@/components/LayoutMenuModal";
-import ArticleItem from "@/components/ArticleItem";
-import useArticleNavigation from "@/hooks/useArticleNavigation";
+import LayoutMenuModal from "../../components/LayoutMenuModal";
+import ArticleItem from "../../components/ArticleItem";
+import useArticleNavigation from "../../hooks/useArticleNavigation";
 import type { Props } from "./LayoutSubmenu.types";
 
 const LayoutSubmenu = (props: Props) => {

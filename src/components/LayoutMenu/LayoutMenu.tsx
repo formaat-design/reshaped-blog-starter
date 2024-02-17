@@ -13,7 +13,7 @@ import {
   type MenuItemProps,
 } from "reshaped";
 import { ArrowUpRight } from "react-feather";
-import config from "@/config";
+import config from "../../config";
 
 const Item = (
   props: {

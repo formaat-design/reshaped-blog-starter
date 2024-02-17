@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import type { SubmenuItemsMap, SubmenuItem } from "@/types";
+import type { SubmenuItemsMap, SubmenuItem } from "../types";
 
 const getArticleData = (filePath: string) => {
   if (!fs.existsSync(filePath)) return;

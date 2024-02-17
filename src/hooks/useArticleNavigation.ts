@@ -1,6 +1,6 @@
 import { usePathname } from "next/navigation";
-import type { SubmenuItemsMap, Menu } from "@/types";
-import config from "@/config";
+import type { SubmenuItemsMap, Menu } from "../types";
+import config from "../config";
 
 const getTitle = (menu: Menu, pathname: string): string | undefined => {
   for (let item of menu) {

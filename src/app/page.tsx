@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import MdxContent from "@/components/MdxContent";
+import MdxContent from "../components/MdxContent";
 
 export default async function IndexRoute() {
   const rootPath = process.cwd();
