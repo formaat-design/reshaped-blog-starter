@@ -1,25 +1,144 @@
 This is a personal blog starter repository built with Next.js and Reshaped.
 Blog design is inpired by brianlovin.com and onur.dev.
 
-> While all code can be forked right now and used for your own blog, I'm planning to publish it as a package and make it possible to only provide the content for the blog, instead of maintaining the whole Next.js application
-
 ## Getting started
 
-To use this for your own blog - start by forking and cloning the repository.
+> You can use `example` directory as a reference for installing the package.
 
-Once you have it cloned – install the dependencies.
-By default, we're using `yarn` but you can use it with the package manager of your choice.
-In the case of using a different package manager – you can delete the original lock file.
+Create a new repository and install `@reshaped/blog` package.
 
 ```
-yarn
+## Create a project folder
+mkdir blog && cd blog
 
-npm install
-
-pnpm install
+## Install the package
+yarn add @reshaped/blog
 ```
 
-Start the project with the `dev` script:
+Add scripts to your `package.json` file:
+
+```json
+{
+  "scripts": {
+    "dev": "reshaped-blog dev",
+    "build": "reshaped-blog build",
+    "start": "reshaped-blog start"
+  }
+}
+```
+
+Customize the blog configuration and top-level menu with the `blog.config.ts` file.
+Here is an example of the config:
+
+```jsx
+import {
+  Home,
+  Feather,
+  Twitter,
+  GitHub,
+  Figma,
+  CheckSquare,
+  Mic,
+  Briefcase,
+  Layers,
+  Package,
+} from "react-feather";
+
+const config = {
+  app: {
+    title: "Reshaped",
+    subtitle: "Blog starter kit",
+    thumbnailUrl: "/img/logo.svg",
+  },
+  meta: {
+    url: "https://reshaped-blog-starter.vercel.app",
+    title: "Reshaped",
+    description: "Blog starter built on top of Next.js and Reshaped",
+    twitter: {
+      username: "blvdmitry",
+    },
+  },
+  menu: [
+    {
+      icon: Home,
+      title: "Home",
+      href: "/",
+    },
+    {
+      icon: Feather,
+      title: "Writing",
+      href: "/article",
+    },
+    {
+      icon: Layers,
+      title: "Stack",
+      href: "/stack",
+    },
+    {
+      title: "Projects",
+      items: [
+        {
+          icon: Package,
+          title: "Reshaped",
+          href: "https://reshaped.so",
+        },
+        {
+          icon: CheckSquare,
+          title: "Design System Checklist",
+          href: "https://www.designsystemchecklist.com",
+        },
+        {
+          icon: Mic,
+          title: "Design System Interviews",
+          href: "https://reshaped.so/blog",
+        },
+        {
+          icon: Briefcase,
+          title: "Formaat Design",
+          href: "https://formaat.design",
+        },
+      ],
+    },
+    {
+      title: "Online",
+      items: [
+        {
+          icon: Twitter,
+          title: "Twitter",
+          href: "https://twitter.com/blvdmitry",
+        },
+        {
+          icon: GitHub,
+          title: "GitHub",
+          href: "https://github.com/formaat-design",
+        },
+        {
+          icon: Figma,
+          title: "Figma",
+          href: "https://www.figma.com/@reshaped",
+        },
+      ],
+    },
+  ],
+};
+
+export default config;
+```
+
+Add new articles by adding `mdx` files in the `posts` directory or inside its subdirectories.
+`index.mdx` is the reserver filename for the homepage.
+
+```
+/posts
+- index.mdx
+- stack.mdx
+- articles
+  - react.mdx
+  - typescript.mdx
+  - vanilla.mdx
+```
+
+Run the `dev` script to start the blog locally and use `build` and `start` scripts for deploying it.
 
 ```
 yarn dev
@@ -27,11 +146,8 @@ yarn dev
 
 ## Working with the content
 
-- To configure the application – use the `src/config.ts` file, which includes the menu structure and the general settings of the blog.
-  You need to manually enter only the top-level menu items, while all submenu items are generated from the markdown file structure.
-- All content resides in the `src/posts` folder and files creates in it control the website routing and displayed submenu items. You can create `.mdx` files on the top level or create a subfolder like `/article` to create categories.
 - Markdown files support `frontmatter` format, where you can pass the article `title` and `created` date properties, they will be displayed in the articles list and on the article route
-- Markdown files support the vanilla markdown features, as well as custom `Bio` component:
+- Markdown files support the vanilla markdown features, as well as a custom `Bio` component:
 
 ```jsx
 <Bio
@@ -58,3 +174,8 @@ yarn dev
   ]}
 />
 ```
+
+## Using without the package
+
+In case you don't want to use the package through NPM, you can fork the repo and modify the source code based on your neeeds.
+Same `dev`, `build`, `start` scripts are available in the root `package.json` file
