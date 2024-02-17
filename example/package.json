@@ -1,0 +1,12 @@
+{
+  "name": "@reshaped/blog-example",
+  "private": true,
+  "scripts": {
+    "dev": "reshaped-blog dev",
+    "build": "reshaped-blog build",
+    "start": "reshaped-blog start"
+  },
+  "dependencies": {
+    "@reshaped/blog": "link:../"
+  }
+}
