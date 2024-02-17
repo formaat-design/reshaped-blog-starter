@@ -26,7 +26,8 @@
     "build": "next build",
     "build:themes": "reshaped theming --output ./src/themes",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "release": "yarn publish"
   },
   "dependencies": {
     "@types/mdx": "2.0.11",
