@@ -94,7 +94,7 @@ const LayoutMenu = () => {
           if ("items" in item) {
             return (
               <Section title={item.title} key={item.title}>
-                {item.items.map((link) => (
+                {item.items?.map((link) => (
                   <Item href={link.href} icon={link.icon} key={link.title}>
                     {link.title}
                   </Item>
