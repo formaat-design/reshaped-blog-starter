@@ -50,7 +50,23 @@ export default function RootLayout({
   const availableRoutes = getArticlesList();
 
   return (
-    <html lang="en" data-rs-theme="blog" data-rs-color-mode="dark">
+    <html lang="en" data-rs-theme="blog" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+							const matcher = window.matchMedia("(prefers-color-scheme: dark)"); 
+							const systemColorMode = matcher.matches ? "dark" : "light";
+							const storedColorMode = localStorage.getItem("__rs-color-mode"); 
+
+							document.documentElement.setAttribute("data-rs-color-mode", storedColorMode || systemColorMode);
+							matcher.addEventListener("change", () => { 
+							 	document.body.setAttribute("data-rs-color-mode", systemColorMode);
+							});
+					`,
+          }}
+        />
+      </head>
       <body>
         <App>
           <View
