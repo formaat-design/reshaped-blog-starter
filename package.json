@@ -1,6 +1,6 @@
 {
   "name": "@reshaped/blog",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Personal blog starter kit built on top of Next.js and Reshaped",
   "license": "MIT",
   "keywords": [
