@@ -28,10 +28,6 @@ const Article = (props: Props) => {
   const titleRef = React.useRef<HTMLHeadingElement | null>(null);
   const headerRef = React.useRef<HTMLDivElement | null>(null);
 
-  const filteredChildren = React.Children.toArray(children).filter(
-    (child) => child !== "\n",
-  );
-
   React.useEffect(() => {
     if (!titleRef.current || !headerRef.current) return;
 
@@ -115,7 +111,7 @@ const Article = (props: Props) => {
               )}
             </View>
           )}
-          <View gap={6}>{filteredChildren}</View>
+          <div className={s.content}>{children}</div>
         </View>
       </Container>
     </>

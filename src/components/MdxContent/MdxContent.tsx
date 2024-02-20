@@ -19,26 +19,10 @@ const components: MDXComponents = {
     );
   },
   ul: ({ children }) => {
-    const filteredChildren = React.Children.toArray(children).filter(
-      (child) => child !== "\n",
-    );
-
-    return (
-      <View as="ul" gap={1} className={s.ul}>
-        {filteredChildren}
-      </View>
-    );
+    return <ul className={s.ul}>{children}</ul>;
   },
   ol: ({ children }) => {
-    const filteredChildren = React.Children.toArray(children).filter(
-      (child) => child !== "\n",
-    );
-
-    return (
-      <View as="ol" gap={1} className={s.ol}>
-        {filteredChildren}
-      </View>
-    );
+    return <ul className={s.ul}>{children}</ul>;
   },
   li: ({ children }) => {
     return (

@@ -1,5 +1,5 @@
 import { codeToHtml } from "shiki";
-import { View } from "reshaped";
+import { View, Theme } from "reshaped";
 import s from "./ArticleCode.module.css";
 
 type Props = {
@@ -15,9 +15,15 @@ const ArticleCode = async (props: Props) => {
   });
 
   return (
-    <View borderRadius="medium" backgroundColor="neutral-faded" overflow="auto">
-      <div dangerouslySetInnerHTML={{ __html: html }} className={s.root} />
-    </View>
+    <Theme colorMode="dark">
+      <View
+        borderRadius="medium"
+        backgroundColor="neutral-faded"
+        overflow="auto"
+      >
+        <div dangerouslySetInnerHTML={{ __html: html }} className={s.root} />
+      </View>
+    </Theme>
   );
 };
 
