@@ -1,7 +1,7 @@
 {
-  "name": "@reshaped/blog",
+  "name": "navins-journey",
   "version": "0.4.0",
-  "description": "Personal blog starter kit built on top of Next.js and Reshaped",
+  "description": "Documenting everything along the way",
   "license": "MIT",
   "keywords": [
     "react",
@@ -24,13 +24,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:themes": "reshaped theming --output ./src/themes",
-    "start": "next start",
-    "lint": "next lint",
-    "release": "yarn publish --access public",
-    "example:dev": "yarn --cwd ./example dev",
-    "example:build": "yarn --cwd ./example build",
-    "example:start": "yarn --cwd ./example start"
+    "start": "next start"
   },
   "dependencies": {
     "@types/mdx": "2.0.11",
