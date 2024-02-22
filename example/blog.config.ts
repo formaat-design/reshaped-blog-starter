@@ -2,6 +2,7 @@ import {
   Home,
   Feather,
   Twitter,
+  Linkedin,
   GitHub,
   Figma,
   CheckSquare,
@@ -13,16 +14,16 @@ import {
 
 const config = {
   app: {
-    title: "Reshaped",
-    subtitle: "Blog starter kit",
+    title: "Navin's Joueney",
+    subtitle: "Documenting everything on the way",
     thumbnailUrl: "/img/logo.svg",
   },
   meta: {
     url: "https://reshaped-blog-starter.vercel.app",
-    title: "Reshaped",
-    description: "Blog starter built on top of Next.js and Reshaped",
+    title: "Navin's Journey",
+    description: "Documenting everything on the way",
     twitter: {
-      username: "blvdmitry",
+      username: "0xNavin",
     },
   },
   menu: [
@@ -73,12 +74,12 @@ const config = {
         {
           icon: Twitter,
           title: "Twitter",
-          href: "https://twitter.com/blvdmitry",
+          href: "https://twitter.com/0xNavin",
         },
         {
-          icon: GitHub,
-          title: "GitHub",
-          href: "https://github.com/formaat-design",
+          icon: Linkedin,
+          title: "LinkedIn",
+          href: "https://www.linkedin.com/in/thenavin/",
         },
         {
           icon: Figma,
